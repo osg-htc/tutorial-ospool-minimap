@@ -225,6 +225,9 @@ There are some files we will be using frequently that do not change often. One e
       condor_submit minimap2_mapping.sub
       ```
 
+>[!CAUTION]
+>You may notice some jobs go on hold during your run. While job holds are typically associated with errors on the user's submission side, they can also be cause by errors on our side. If you notice jobs go on hold, you can use the command `condor_q -held` to print the hold error message. Some errors can be fixed by simply releasing the jobs, which re-queues the job for an additional attempt. Other errors may be indicitive or a typo or otherwise user error. If you're ever not sure what the error means, reach out to us at [support@osg-htc.org](mailto:support@osg-htc.org) and send us the `.log`, `.err`, `.out`, and `.sub` file as an attachment. 
+
 ## Next Steps
 
 Now that you've completed the long-read minimap tutorial on the OSPool, you're ready to adapt these workflows for your own data and research questions. Here are some suggestions for what you can do next:
