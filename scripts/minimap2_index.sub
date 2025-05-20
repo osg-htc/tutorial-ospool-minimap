@@ -1,0 +1,17 @@
++SingularityImage      = "osdf:///ospool/<ap##>/data/<user.name>/tutorial-ospool-minimap/minimap2.sif"
+
+executable             = ./minimap2_index.sh
+
+transfer_input_files   = ./data/ref_genome/Celegans_ref.fa
+
+transfer_output_files  = ./Celegans_ref.mmi
+transfer_output_remaps = "Celegans_ref.mmi = /ospool/<ap##>/data/<user.name>/tutorial-ospool-minimap/Celegans_ref.mmi"
+output                 = ./log/$(Cluster)_$(Process)_indexing_step1.out
+error                  = ./log/$(Cluster)_$(Process)_indexing_step1.err
+log                    = ./log/$(Cluster)_$(Process)_indexing_step1.log
+
+request_cpus           = 4
+request_disk           = 5 GB
+request_memory         = 5 GB
+
+queue 1

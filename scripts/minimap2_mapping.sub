@@ -1,0 +1,18 @@
++SingularityImage      = "osdf:///ospool/<ap##>/data/<user.name>/tutorial-ospool-minimap/minimap2.sif"
+
+executable             = ./minimap2_mapping.sh
+arguments              = $(read_subset_file)
+transfer_input_files   = osdf:///ospool/<ap##>/data/<user.name>/tutorial-ospool-minimap/Celegans_ref.mmi, ./data/fastq_reads/$(read_subset_file)
+
+transfer_output_files  = ./mapped_$(read_subset_file)_reads_to_genome.sam
+transfer_output_remaps = "mapped_$(read_subset_file)_reads_to_genome.sam = ./data/mappedSAM/mapped_$(read_subset_file)_reads_to_genome.sam
+
+output                 = ./log/$(Cluster)_$(Process)_mapping_$(read_subset_file)_step2.out
+error                  = ./log/$(Cluster)_$(Process)_mapping_$(read_subset_file)_step2.err
+log                    = ./log/$(Cluster)_$(Process)_mapping_$(read_subset_file)_step2.log
+
+request_cpus           = 2
+request_disk           = 4 GB
+request_memory         = 4 GB
+
+queue read_subset_file from ./list_of_FASTQs.txt
